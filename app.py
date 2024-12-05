@@ -1,3 +1,6 @@
+import sys
+sys.path.insert(0, r'C:\Users\Administrator\Documents\Proyecto seg clientes refuerzo\myenv\Lib\site-packages')
+
 import streamlit as st
 import numpy as np
 from tensorflow.keras.models import load_model
