@@ -3,12 +3,12 @@ sys.path.insert(0, r'C:\Users\Administrator\Documents\Proyecto seg clientes refu
 
 import streamlit as st
 import numpy as np
-from tensorflow.keras.models import load_model
-import joblib  # Para cargar el escalador
+import joblib  # Para cargar el modelo y el escalador
 import sqlite3
 from datetime import datetime
 import pandas as pd
 
+# Inicializar la base de datos
 def inicializar_bd():
     conexion = sqlite3.connect("predicciones.db")  # Archivo SQLite
     cursor = conexion.cursor()
@@ -36,6 +36,7 @@ def inicializar_bd():
 
 inicializar_bd()
 
+# Guardar predicción en la base de datos
 def guardar_prediccion(input_data, clase_predicha, descripcion):
     conexion = sqlite3.connect("predicciones.db")
     cursor = conexion.cursor()
@@ -54,12 +55,14 @@ def guardar_prediccion(input_data, clase_predicha, descripcion):
     conexion.commit()
     conexion.close()
 
-
 # Cargar modelo y escalador
 @st.cache_resource
 def cargar_modelo_y_escalador():
-    modelo = load_model("modelo_logistico.pkl")
-    escalador = joblib.load("scaler.pkl")  # Asegúrate de guardar el escalador
+    modelo_path = r'C:/Users/Administrator/Documents/Proyecto seg clientes refuerzo/proyecto_seg_clientes/modelo_logistico.pkl'
+    escalador_path = r'C:/Users/Administrator/Documents/Proyecto seg clientes refuerzo/proyecto_seg_clientes/scaler.pkl'
+    
+    modelo = joblib.load(modelo_path)  # Cargar el modelo
+    escalador = joblib.load(escalador_path)  # Cargar el escalador
     return modelo, escalador
 
 modelo, escalador = cargar_modelo_y_escalador()
@@ -107,8 +110,7 @@ input_data_scaled = escalador.transform(input_data)
 
 # Realizar predicción
 if st.button("Predecir"):
-    prediccion = modelo.predict(input_data_scaled)
-    clase_predicha = np.argmax(prediccion, axis=1)[0] + 1  # Sumar 1 si las clases empiezan en 1
+    clase_predicha = modelo.predict(input_data_scaled)[0]  # El modelo predice directamente la clase
     clase_nombre = clase_nombres[clase_predicha]
     
     # Mostrar resultado en la app
