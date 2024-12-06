@@ -58,7 +58,7 @@ def guardar_prediccion(input_data, clase_predicha, descripcion):
 # Cargar modelo y escalador
 @st.cache_resource
 def cargar_modelo_y_escalador():
-    modelo = load_model("mejor_modelo.h5")
+    modelo = load_model("modelo_logistico.pkl")
     escalador = joblib.load("scaler.pkl")  # Asegúrate de guardar el escalador
     return modelo, escalador
 
