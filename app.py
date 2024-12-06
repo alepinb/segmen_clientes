@@ -58,8 +58,8 @@ def guardar_prediccion(input_data, clase_predicha, descripcion):
 # Cargar modelo y escalador
 @st.cache_resource
 def cargar_modelo_y_escalador():
-    modelo_path = r'C:/Users/Administrator/Documents/Proyecto seg clientes refuerzo/proyecto_seg_clientes/modelo_logistico.pkl'
-    escalador_path = r'C:/Users/Administrator/Documents/Proyecto seg clientes refuerzo/proyecto_seg_clientes/scaler.pkl'
+    modelo_path = r'./modelo_logistico.pkl'
+    escalador_path = r'./scaler.pkl'
     
     modelo = joblib.load(modelo_path)  # Cargar el modelo
     escalador = joblib.load(escalador_path)  # Cargar el escalador
