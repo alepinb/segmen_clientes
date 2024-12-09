@@ -1,7 +1,10 @@
-# CARACTERÍSTICAS
+# Proyecto de Segmentación de Clientes
 
-Este proyecto es una aplicación de Streamlit que segmenta a los clientes utilizando datos demográficos. Incluye una API con la siguiente estructura de carpetas:
+Este proyecto tiene como objetivo la segmentación de clientes utilizando diversas técnicas de machine learning, incluyendo árboles de decisión, redes neuronales y otros enfoques de clasificación.
 
+# Estructura del Proyecto
+
+```plaintext
 Proyecto_seg_clientes/
 ├── .devcontainer/
 ├── catboost_info/
@@ -26,6 +29,7 @@ Proyecto_seg_clientes/
 ├── seg_clientes_red_neuronal_optuna_smoote.ipynb
 ├── seg_clientes_red_neuronal_optuna.ipynb
 └── seg_clientes_reg_logistica_multiclase_optuna.ipynb
+```
 
 # CARACTERÍSTICAS
 - Segmenta a los clientes usando datos demográficos
@@ -54,7 +58,7 @@ El proyecto incluye varios modelos, como:
 - Random Forest (`seg_clientes_random_forest.ipynb`) 
 - Red neuronal (`seg_clientes_red_neuronal_optuna.ipynb`)
 
-El mejor modelo se guarda como `mejor_modelo.h5`.
+El mejor modelo se guarda como `modelo_logistico.pkl`.
 
 # DEPENDENCIAS
 Las dependencias se gestionan en `requirements.txt`. Incluyen:
@@ -65,5 +69,7 @@ Las dependencias se gestionan en `requirements.txt`. Incluyen:
 - Scikit-learn
 - LightGBM
 
-# CONTRIBUCIÓN
-Envía una solicitud de extracción con tus cambios. Realizado por Alejandra Piñango.
+Entre otras.
+
+# Autora
+Realizado por Alejandra Piñango.
