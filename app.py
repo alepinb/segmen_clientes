@@ -125,3 +125,5 @@ if st.checkbox("Mostrar predicciones almacenadas"):
     predicciones = pd.read_sql_query("SELECT * FROM predicciones", conexion)
     st.write(predicciones)
     conexion.close()
+
+# Se abre en http://localhost:8501/ cuando corro el dockerfile

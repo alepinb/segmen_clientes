@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+*.log
+.env
+.DS_Store
+*.db-journal
+.git
+node_modules/
+.devcontainer/
+.vscode/
