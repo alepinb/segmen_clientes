@@ -1,15 +1,14 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 import numpy as np
-from tensorflow.keras.models import load_model
 import joblib
 
 # Inicializar FastAPI
 app = FastAPI()
 
 # Cargar el modelo y el escalador
-modelo = load_model("mejor_modelo.h5")
-escalador = joblib.load("scaler.pkl")
+modelo = joblib.load("modelo_logistico.pkl")  # Cargar el modelo logístico
+escalador = joblib.load("scaler.pkl")  # Asegúrate de que el escalador también esté guardado
 
 # Diccionario para mapear clases a nombres
 clase_nombres = {
@@ -56,8 +55,7 @@ def predict(data: ClienteData):
         input_data_scaled = escalador.transform(input_data)
 
         # Hacer predicción
-        prediccion = modelo.predict(input_data_scaled)
-        clase_predicha = int(np.argmax(prediccion, axis=1)[0] + 1)  # Convertir a int
+        clase_predicha = int(modelo.predict(input_data_scaled)[0])  # Scikit-learn devuelve directamente la clase
         clase_nombre = clase_nombres[clase_predicha]
 
         # Devolver una respuesta compatible con JSON
@@ -68,6 +66,8 @@ def predict(data: ClienteData):
     except Exception as e:
         # Manejar errores y registrar información útil
         return {"error": f"Error interno en el servidor: {str(e)}"}
+
+
 
 
 # Se corre esta línea: uvicorn api:app --reload
