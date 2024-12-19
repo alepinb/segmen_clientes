@@ -1,8 +1,8 @@
-# Proyecto de Segmentación de Clientes
+# 🎯 Proyecto de Segmentación de Clientes
 
-Este proyecto tiene como objetivo la segmentación de clientes utilizando diversas técnicas de machine learning, incluyendo árboles de decisión, redes neuronales y otros enfoques de clasificación.
+Este proyecto tiene como objetivo la **segmentación de clientes** utilizando diversas técnicas de *machine learning*, incluyendo **árboles de decisión**, **redes neuronales** y otros enfoques de clasificación.
 
-# Estructura del Proyecto
+## 📂 Estructura del Proyecto
 
 ```plaintext
 Proyecto_seg_clientes/
@@ -31,45 +31,64 @@ Proyecto_seg_clientes/
 └── seg_clientes_reg_logistica_multiclase_optuna.ipynb
 ```
 
-# CARACTERÍSTICAS
-- Segmenta a los clientes usando datos demográficos
-- Incluye una API para acceder al modelo de segmentación
-- Dockerizado para una implementación sencilla
+## ✨ Características
 
-# PRIMEROS PASOS
-1. Clona el repositorio: `git clone https://github.com/your-username/Proyecto_seg_clientes.git`
-2. Construye el contenedor Docker: `docker build -t seg-clientes-app .`
-3. Ejecuta el contenedor Docker: `docker run -p 8501:8501 seg-clientes-app`
-4. Accede a la aplicación de Streamlit en `http://localhost:8501`
+* 📊 **Segmenta a los clientes** usando datos demográficos
+* 🚀 Incluye una **API** para acceder al modelo de segmentación
+* 🐳 **Dockerizado** para una implementación sencilla
 
-# ENDPOINTS DE LA API
+## 🚀 Primeros Pasos
+
+1. 🔄 Clona el repositorio:
+```bash
+git clone https://github.com/your-username/Proyecto_seg_clientes.git
+```
+
+2. 🏗️ Construye el contenedor Docker:
+```bash
+docker build -t seg-clientes-app .
+```
+
+3. ▶️ Ejecuta el contenedor Docker:
+```bash
+docker run -p 8501:8501 seg-clientes-app
+```
+
+4. 🌐 Accede a la aplicación de Streamlit en `http://localhost:8501`
+
+## 🌐 Endpoints de la API
+
 La API incluye los siguientes endpoints:
-- `GET /predict`: Devuelve las predicciones de segmentación de clientes para una entrada dada
-- `POST /train`: Entrena el modelo de segmentación con nuevos datos
+* 🔍 `GET /predict`: Devuelve las predicciones de segmentación de clientes para una entrada dada
+* 🛠️ `POST /train`: Entrena el modelo de segmentación con nuevos datos
 
-Consulta el archivo `api.py` para más detalles.
+📜 Consulta el archivo `api.py` para más detalles.
 
-# DATOS
-El proyecto utiliza datos demográficos en el directorio `Data/`. El archivo `dockgenore` se usa para la gestión de la imagen Docker.
+## 🗂️ Datos
 
-# MODELOS
+El proyecto utiliza datos demográficos ubicados en el directorio `Data/`. 📦 El archivo `dockgenore` se usa para la gestión de la imagen Docker.
+
+## 🤖 Modelos
+
 El proyecto incluye varios modelos, como:
-- Regresión logística (`modelo_logistico.pkl`)
-- Random Forest (`seg_clientes_random_forest.ipynb`) 
-- Red neuronal (`seg_clientes_red_neuronal_optuna.ipynb`)
+* 📈 **Regresión logística**: `modelo_logistico.pkl`
+* 🌳 **Random Forest**: `seg_clientes_random_forest.ipynb`
+* 🧠 **Red neuronal**: `seg_clientes_red_neuronal_optuna.ipynb`
 
-El mejor modelo se guarda como `modelo_logistico.pkl`.
+🏆 **El mejor modelo** se guarda como `modelo_logistico.pkl`.
 
-# DEPENDENCIAS
-Las dependencias se gestionan en `requirements.txt`. Incluyen:
-- Streamlit
-- NumPy
-- Pandas
-- SQLite3
-- Scikit-learn
-- LightGBM
+## 📋 Dependencias
 
-Entre otras.
+Las dependencias se gestionan en el archivo `requirements.txt`. Incluyen:
+* 🌐 Streamlit
+* 🧮 NumPy
+* 📊 Pandas
+* 🗃️ SQLite3
+* ⚙️ Scikit-learn
+* 🔦 LightGBM
 
-# Autora
-Realizado por Alejandra Piñango.
+¡Y muchas más!
+
+## ✍️ Autora
+
+Realizado por **Alejandra Piñango**. 😊
